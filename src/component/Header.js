@@ -1,4 +1,5 @@
 import React from "react";
+import { Link } from "react-router-dom";
 
 const Header = () => {
   return (
@@ -18,13 +19,34 @@ const Header = () => {
             <div className="collapse navbar-collapse" id="collapsibleNavbar">
               <ul className="navbar-nav ms-auto">
                 <li className="nav-item">
-                  <h2 className="nav-link">Author</h2>
+                  <h2 className="nav-link">
+                    <Link
+                      to="/"
+                      style={{ color: "#ffffff8c", textDecoration: "none" }}
+                    >
+                      Author
+                    </Link>
+                  </h2>
                 </li>
                 <li className="nav-item">
-                  <h2 className="nav-link">MostLikedPost</h2>
+                  <h2 className="nav-link">
+                    <Link
+                      to="/"
+                      style={{ color: "#ffffff8c", textDecoration: "none" }}
+                    >
+                      MostLikedPost
+                    </Link>
+                  </h2>
                 </li>
                 <li className="nav-item">
-                  <h2 className="nav-link">MostCommentPost</h2>
+                  <h2 className="nav-link">
+                    <Link
+                      to="/"
+                      style={{ color: "#ffffff8c", textDecoration: "none" }}
+                    >
+                      MostCommentPost
+                    </Link>
+                  </h2>
                 </li>
               </ul>
             </div>

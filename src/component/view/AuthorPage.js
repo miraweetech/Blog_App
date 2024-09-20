@@ -5,6 +5,7 @@ import {
   fetchAuthor,
   requestDetailSuccessAction,
 } from "../../redux/reducer/AuthorSlice";
+import Buttons from "./Buttons";
 
 const AuthorPage = () => {
   const dispatch = useDispatch();
@@ -47,6 +48,7 @@ const AuthorPage = () => {
             </div>
           ))}
       </div>
+      <Buttons/>
     </div>
   );
 };

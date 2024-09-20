@@ -1,10 +1,10 @@
 import { createAsyncThunk, createSlice } from "@reduxjs/toolkit";
 import axios from "axios";
 
-export const fetchAuthor = createAsyncThunk("author/fetchAuthor", async () => {
+export const fetchAuthor = createAsyncThunk("author/fetchAuthor", async (page = 1) => {
   try {
     const response = await axios.get(
-      `https://66d7f3f837b1cadd8052c6c0.mockapi.io/images/images`
+      `https://66d7f3f837b1cadd8052c6c0.mockapi.io/images/images?page=${page}&limit=12`
     );
     console.log("author", response.data);
     return response.data;
@@ -20,11 +20,15 @@ const AuthorSlice = createSlice({
     loading: false,
     error: null,
     details: null,
+    currentPage: 1,
   },
   reducers: {
     requestDetailSuccessAction: (state, action) => {
       state.details = action.payload;
     },
+    setPage: (state, action) => {
+      state.currentPage = action.payload
+    }
   },
   extraReducers: (builder) => {
     builder
@@ -43,5 +47,5 @@ const AuthorSlice = createSlice({
   },
 });
 
-export const { requestDetailSuccessAction } = AuthorSlice.actions;
+export const { requestDetailSuccessAction, setPage } = AuthorSlice.actions;
 export default AuthorSlice.reducer;
